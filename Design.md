@@ -20,9 +20,16 @@ Given a list of prices of length n, return a list of n-k-1 parameter values, whe
 ### growth(data, growth_fn)
 Return the growth of the data using growth_fn.
 
-### bootstrap(parameter_values, num_iter, k)
-Return the array of dimension [num_iter], where each element is a weighted sum of k randomly sampled elements 
-(with replacement) from data.
+### bootstrap(parameter_values, num_iter, px)
+Return the array of dimension [num_iter], where each element is a weighted sum of len(parameter_values) randomly sampled elements 
+(with replacement) from data with distribution px. 
+
+px is a list representing the probability distribution on parameter values, where P(x) = probaiblity of x getting selected.
+
+
+### distribution(paramters)
+Generate a probability distribution on the parameters and return it as a list p, where p[i] = probability of element i getting picked and sum(p) = 1.
+
 
 ### cluster(sampled_parameter_values)
 What we want: partition our list of PVs by value. Identify and return the center of
