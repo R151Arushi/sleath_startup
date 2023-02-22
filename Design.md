@@ -27,6 +27,35 @@ Return the array of dimension [num_iter], where each element is a weighted sum o
 ### cluster(sampled_parameter_values)
 What we want: partition our list of PVs by value. Identify and return the center of
 the densest partition(s).
-Library to look at: ckmeans. 
+Defintion of k-means clustering:
+
+> k-means clustering aims to partition n observations into k clusters in which each observation belongs to the cluster with 
+> the nearest mean (cluster centers or cluster centroid), serving as a prototype of the cluster.
+
+Remember all of the discussion of sorting our monte-carlo output into "bands" based on their value? This gives us clusters
+instead of fixed bands, meaning we let go of the idea of standardizing bands and give more freedom to our
+final PV/Probability graph.
+
+kmeans1D returns two lists: 'clusters' and centroids. 'clusters' contains which cluster the to which 
+the corresponding element of the original list belongs. We simply need to find out the most popular cluster,
+and its corresponding probability is the proportion in which it exists in the list of labels.
+
+Example:
+
+```python
+    import kmeans1d
+
+    x = [4.0, 4.1, 4.2, 4.3, 4.1, -50, 200.2, 200.4, 200.9, 80, 100, 102]
+    k = 4
+
+    clusters, centroids = kmeans1d.cluster(x, k)
+
+    print(clusters)   # [1, 1, 1, 1, 1, 0, 3, 3, 3, 2, 2, 2]
+    print(centroids)  # [-50.0, 4.1, 94.0, 200.5]
+```
+
+Here, Cluster 1 with centroid 4.1 is the densest cluster with probability 5/12. Equivalently we can find "probabilities"
+for the other clusters too.
+
 
 ### 
