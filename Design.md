@@ -17,7 +17,7 @@ successive groups of k points. As an example, for k=3, we process our price data
 
 
 ### generateParameter(prices, k, multipliers)
-Given a list of prices of length n, return a list of n-k-1 parameter values, where k is the interval size. multipliers is the list
+Given a list of prices of length n, return a list of n-k+1 parameter values, where k is the interval size. multipliers is the list
 of numbers used as multipliers corresponding to a pattern of growth.
 
 ### growth(data, growth_fn)
