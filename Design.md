@@ -24,7 +24,7 @@ Return the growth of the data using growth_fn.
 Return the array of dimension [num_iter], where each element is a weighted sum of len(parameter_values) randomly sampled elements 
 (with replacement) from data with distribution px. 
 
-px is a list representing the probability distribution on parameter values, where px[x] = probaiblity of x getting selected.
+px is a list representing the probability distribution on parameter values, where px[x] = probaiblity of xth element of data getting selected.
 
 
 ### distribution(paramters)
