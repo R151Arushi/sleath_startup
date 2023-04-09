@@ -23,6 +23,9 @@ of numbers used as multipliers corresponding to a pattern of growth.
 ### growth(data, growth_fn)
 Return the growth of the data using growth_fn.
 
+### multiplier(changes, threshold)
+Return the multiplier associated with the pattern of change in changes[].
+
 ### bootstrap(parameter_values, num_iter, px)
 Return the array of dimension [num_iter], where each element is a weighted sum of len(parameter_values) randomly sampled elements 
 (with replacement) from data with distribution px. 
