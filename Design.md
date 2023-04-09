@@ -14,8 +14,11 @@ successive groups of k points. As an example, for k=3, we process our price data
 ((avg growth between prices 1,2,3),(avg growth between prices 2,3,4,) ... (avg growth between prices n-2 ,n-1,n))
 ## Function Definitions
 
-### generateParameter(prices, k)
-Given a list of prices of length n, return a list of n-k-1 parameter values, where k is the interval size.
+
+
+### generateParameter(prices, k, multipliers)
+Given a list of prices of length n, return a list of n-k-1 parameter values, where k is the interval size. multipliers is the list
+of numbers used as multipliers corresponding to a pattern of growth.
 
 ### growth(data, growth_fn)
 Return the growth of the data using growth_fn.
